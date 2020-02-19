@@ -4,7 +4,10 @@
   "description": "Simple global state management for React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "develop": "npx tsc -w",
+    "build": "npm run removeDist && npm run compile",
+    "compile": "npx rollup -c",
+    "removeDist": "rimraf dist/"
   },
   "author": "Julius Dockwarder <julius@dockwarder.com> (https://github.com/dockwarder)",
   "license": "ISC",
@@ -14,5 +17,12 @@
   },
   "contributors": [
     "Johannes Kortmann (https://github.com/jkortmann)"
-  ]
+  ],
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.31.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
+  }
 }
